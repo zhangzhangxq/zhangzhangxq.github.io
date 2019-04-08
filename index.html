@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model='search' />
+    <ul v-for="item in searchData ">
+        <li>{{item.name}},价格:￥{{item.price}}</li>
+    </ul>
+</div>
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            search: '',
+            products: [{
+                name: '苹果',
+                price: 25,
+                category: "水果"
+            }, {
+                name: '苹果41561',
+                price: 15,
+                category: "水果"
+            }, {
+                name: '苹果785498',
+                price: 65,
+                category: "水果"
+            }, {
+                name: '宝马',
+                price: 2500,
+                category: "汽车"
+            }, {
+                name: '奔驰',
+                price: 10025,
+                category: "汽车"
+            }, {
+                name: '柑橘',
+                price: 15,
+                category: "水果"
+            }, {
+                name: '奥迪',
+                price: 25,
+                category: "汽车"
+            }, {
+                name: '火龙果',
+                price: 25,
+                category: "工具"
+            }]
+        },
+       
+ computed: {
+            searchData: function() {
+                var search = this.search;
+		            var searchVal = '';//搜索后的数据
+                if (search) {  
+                  debugger
+                   searchVal = this.products.filter(function(product) {
+                   
+                        return Object.keys(product).some(function(key) {
+                        return String(product[key]).indexOf(search) > -1;
+                        })
+                    })
+		              return searchVal;
+                }
+            }
+        }
+ 
+    })
+</script>
+</body>
+</html>
