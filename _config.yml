@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Hexo Configuration
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
@@ -84,3 +85,6 @@ repository: https://github.com/zhangzhangxq/zhangzhangxq.github.io.git
 
 branch: master
 
+=======
+theme: jekyll-theme-cayman
+>>>>>>> 74af0acd23a31e76752cd35cce82f4961adb06ef
